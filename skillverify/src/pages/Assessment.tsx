@@ -104,11 +104,21 @@ function ConfigScreen({ onStart, loading, techStack }: ConfigScreenProps) {
     const defaultCat = profile?.interest?.toLowerCase() as any;
     const initialCategory = CATEGORIES.includes(defaultCat) ? defaultCat : CATEGORIES[0];
 
-    // Initialize languages once
+    // Initialize languages once — reads from profile, techStack, AND localStorage (set by GitHub scraper)
     const [selectedLanguages, setSelectedLanguages] = useState<string[]>(() => {
         const langs: string[] = [];
+        // Priority 1: languages saved from multi-repo GitHub scraper
+        try {
+            const stored = localStorage.getItem('sb_detected_languages');
+            if (stored) {
+                const parsed: string[] = JSON.parse(stored);
+                langs.push(...parsed.map(l => l.toLowerCase()));
+            }
+        } catch { /* ignore */ }
+        // Priority 2: user profile preferences
         if (profile?.techPreferences?.frontend) langs.push(...profile.techPreferences.frontend.split(',').map((s: string) => s.trim().toLowerCase()));
         if (profile?.techPreferences?.backend) langs.push(...profile.techPreferences.backend.split(',').map((s: string) => s.trim().toLowerCase()));
+        // Priority 3: Firestore-fetched techStack
         if (techStack?.language) langs.push(techStack.language.toLowerCase());
         if (techStack?.languages) langs.push(...Object.keys(techStack.languages).map(l => l.toLowerCase()));
 

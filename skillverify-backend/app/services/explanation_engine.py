@@ -88,8 +88,8 @@ async def generate_skill_explanation(
         response = await model.generate_content_async(
             prompt,
             generation_config=genai.GenerationConfig(
-                temperature=0.7,
-                max_output_tokens=1500,
+                temperature=0.65,
+                max_output_tokens=2500,
             ),
         )
 

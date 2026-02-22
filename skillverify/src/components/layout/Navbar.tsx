@@ -9,8 +9,9 @@ import {
 const studentLinks = [
     { to: '/github', label: 'GitHub Analysis', icon: Github },
     { to: '/assessment', label: 'Assessment', icon: Code2 },
-    { to: '/behavior', label: 'Behaviour', icon: BarChart3 },
-    { to: '/report', label: 'Skill Report', icon: BookOpen },
+    { to: '/behavior', label: 'Knowledge Center', icon: BookOpen },
+    { to: '/report', label: 'Skill Report', icon: BarChart3 },
+    { to: '/skill-engine', label: 'Skill Engine', icon: Brain },
 ]
 
 const teacherLinks = [
