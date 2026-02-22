@@ -3,6 +3,7 @@ GitHub Repository Analysis Service using Playwright.
 Extracts: tech stack, frameworks, libraries, stars, forks, README length, CI/CD detection.
 """
 import re
+import sys
 import json
 import asyncio
 from datetime import datetime
@@ -10,6 +11,13 @@ from typing import Optional, Dict, List, Tuple, Any
 from urllib.parse import urlparse
 import logging
 from app.models.report import RepoAnalysis
+
+# ── Windows Playwright fix ────────────────────────────────────────────────────
+# Playwright requires ProactorEventLoop on Windows.
+# Apply this here so it works whether launched via run.py OR uvicorn directly.
+if sys.platform == "win32":
+    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+
 
 # Configure logging
 logger = logging.getLogger(__name__)
