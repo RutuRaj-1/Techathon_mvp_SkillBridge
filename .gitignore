@@ -1,0 +1,90 @@
+# ─── Python / Backend ──────────────────────────────────────────────────────────
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+*.whl
+
+# Environment variables (NEVER commit secrets)
+.env
+.env.local
+.env.production
+.env.*.local
+skillverify-backend/.env
+
+# ─── Node / Frontend ───────────────────────────────────────────────────────────
+node_modules/
+skillverify/node_modules/
+
+# Vite build output
+skillverify/dist/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Vite cache
+.vite/
+skillverify/.vite/
+
+# ─── Firebase ──────────────────────────────────────────────────────────────────
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+firebase-export-*/
+
+# Firebase service account keys (CRITICAL - never commit)
+*service-account*.json
+*serviceAccount*.json
+firebase-adminsdk-*.json
+
+# ─── Playwright / Browser ──────────────────────────────────────────────────────
+test-results/
+playwright-report/
+.playwright/
+
+# ─── Testing ───────────────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+*.lcov
+htmlcov/
+.pytest_cache/
+
+# ─── IDEs & Editors ────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.suo
+*.user
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ─── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+
+# ─── Misc ──────────────────────────────────────────────────────────────────────
+*.tmp
+*.bak
+*.orig
+.cache/
+temp/
+tmp/
+
+# ─── Scripts (keep structure, but skip any local data dumps) ──────────────────
+scripts/*.json
+!scripts/example*.json
