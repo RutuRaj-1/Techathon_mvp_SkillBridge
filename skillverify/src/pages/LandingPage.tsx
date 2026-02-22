@@ -52,13 +52,6 @@ const FEATURES = [
     },
 ]
 
-const STATS = [
-    { value: '7', label: 'AI Modules', icon: Brain },
-    { value: '50+', label: 'Languages Supported', icon: Code2 },
-    { value: '99%', label: 'Accuracy Rate', icon: CheckCircle2 },
-    { value: '10k+', label: 'Assessments Run', icon: Users },
-]
-
 const HOW_IT_WORKS = [
     { step: '01', title: 'Connect GitHub', desc: 'Paste your repo URL and let our AI analyse your real-world code' },
     { step: '02', title: 'Take Assessment', desc: 'Answer adaptive MCQs and coding challenges based on your stack' },
@@ -91,18 +84,11 @@ export default function LandingPage() {
                 </div>
 
                 <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-                    {/* Badge */}
-                    <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full border border-blue-500/20 mb-8 animate-fade-in">
-                        <Sparkles size={14} className="text-blue-400" />
-                        <span className="text-sm text-slate-300 font-medium">Powered by Gemini 2.5 Flash AI</span>
-                        <span className="badge badge-blue text-xs">NEW</span>
-                    </div>
-
                     {/* Headline */}
                     <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 animate-slide-up">
                         Verify Skills with
                         <br />
-                        <span className="gradient-text">Real AI Intelligence</span>
+                        <span className="gradient-text">Real Intelligence</span>
                     </h1>
 
                     <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
@@ -122,31 +108,6 @@ export default function LandingPage() {
                             </Link>
                         )}
                     </div>
-
-                    {/* Trust badges */}
-                    <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-600 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                        {['No credit card required', 'Open source', '100% explainable AI'].map((item) => (
-                            <div key={item} className="flex items-center gap-2">
-                                <CheckCircle2 size={14} className="text-emerald-500" />
-                                {item}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Stats */}
-            <section className="py-12 px-6 border-y border-white/5">
-                <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {STATS.map(({ value, label, icon: Icon }) => (
-                        <div key={label} className="text-center">
-                            <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mx-auto mb-3">
-                                <Icon size={18} className="text-blue-400" />
-                            </div>
-                            <p className="text-3xl font-black gradient-text-blue mb-1">{value}</p>
-                            <p className="text-sm text-slate-500">{label}</p>
-                        </div>
-                    ))}
                 </div>
             </section>
 
